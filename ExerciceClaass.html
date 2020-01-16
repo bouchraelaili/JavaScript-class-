@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>classes</title>
+    <script>
+        class Person {
+            constructor(nom,prenom,date,lieu,tel,adresse){
+                this.nom = nom;
+                this.prenom =prenom;
+                this.date = date;
+                this.lieu = lieu;
+                this.tel = tel;
+                this.adresse= adresse;            
+                }
+        }
+
+
+       
+function Ajouter(){
+    let row = "<tr>";
+    let person = new Person(
+        document.getElementById("nom").value,
+        document.getElementById("prenom").value,
+        document.getElementById("date").value,
+        document.getElementById("lieu").value,
+        document.getElementById("tel").value,        
+        document.getElementById("adresse").value
+    )
+    row += "<td>"+person.nom+"</td>";
+    row += "<td>"+person.prenom+"</td>";
+    row += "<td>"+person.date+"</td>";
+    row += "<td>"+person.lieu+"</td>";
+    row += "<td>"+person.tel+"</td>";
+    row += "<td>"+person.adresse+"</td>";
+    row += "</tr>";
+
+    document.getElementById("table").innerHTML += row;
+    
+    }
+   
+    
+    
+    </script>
+
+<style type="text/css">
+    body{
+         background: linear-gradient(#B53471,#6F1E51,#B53471,#6F1E51);
+     }
+    .divAll{
+        width: 600px;
+        background-color: white;
+        height: 600px;
+        margin:5%;
+        border-radius: 2%;
+        padding-top: 6%;
+
+    }
+     input[type=text]{
+       
+        width: 48%;
+        height: 20px;
+        margin-bottom:2%;
+        margin-top: 2%;
+        border-top-style: hidden;
+        border-left-style: hidden;
+        border-right-style: hidden;
+        border-bottom-style:groove;
+        border-color:#dcdde1;
+        font-size: 16px;
+        outline: none;
+       }
+       label{
+        color:#B53471;
+        float: left;
+        padding-left: 28%;
+       }
+       #button1{
+            background-color:#B53471;border-radius:4px;width: 150px;height: 40px;border:none;color: white;
+
+        }
+            #button1:hover { background-color: #1D1E1E;
+        }
+        td{
+            width: 70px;
+            color: white;
+        }
+        table{
+             border-collapse: collapse;
+             border-color: white;
+             text-align: center;
+        }
+        h1{
+            color: white;
+            font-family: poppins, Charcoal, sans-serif;
+           padding-top: 1%;
+          /* padding-bottom: 4%;*/
+        }
+        th{
+            background-color: white;
+            color:#B53471;
+        }
+
+</style>
+
+
+
+
+</head>
+<body><center> <h1>Formulaire d'affichage</h1></center>
+    <form id="form1">
+    <center>
+       
+
+    <div class="divAll">
+        <div>
+         <label>Nom</label><br>
+         <input type="text" id="nom" class="A">
+       </div>
+       <div>
+         <label>Prenom</label><br>
+         <input type="text" id="prenom" class="A">
+     </div>
+     <div>
+         <label>Date</label><br>
+         <input type="text" id="date" class="A">
+     </div>
+     <div>
+          <label>Lieu</label><br>
+         <input type="text" id="lieu" class="A">
+     </div>
+     <div>
+          <label>Numéro</label><br>
+         <input type="text" id="tel" class="A">
+     </div>
+     <div>
+         <label>Adresse</label><br>
+         <input type="text" id="adresse" class="A">
+     </div>
+     <div style="padding-top: 6%;">
+<!-- <button  onclick="Ajouter()"  name="">Afficher</button> -->
+<input type="button"  id="button1" onclick="Ajouter()" value="Ajouter">
+</div>
+    </div>
+    <!-- <button onclick="addRow()" >Ajouter</button> -->
+    
+    </center>
+    </form>
+    <center>
+    <table border="2px " id="table" width="700px">
+        <tr>    <th>Nom</th>
+                <th>Prenom</th>
+                <th>Date</th>
+                <th>Lieu</th>
+                <th>Numero</th>
+                <th>Adresse</th>
+        </tr>
+    </table>
+    </center>
+</body>
+</html>
